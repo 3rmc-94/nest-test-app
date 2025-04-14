@@ -50,7 +50,9 @@ export class UsersService extends BaseService {
     }
   }
 
-  async findOne(id: number): Promise<CommonResponseDto<{ users: UserReadDto[] }>> {
+  async findOne(
+    id: number
+  ): Promise<CommonResponseDto<{ users: UserReadDto[] }>> {
     try {
       const userEntity = await this.usersRepository.findOneBy({ id });
 
