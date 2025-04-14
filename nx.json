@@ -51,7 +51,7 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["apps/nest-test-app-e2e/**/*"]
+      "exclude": []
     }
   ],
   "targetDefaults": {
