@@ -50,15 +50,15 @@ export class UsersService extends BaseService {
     }
   }
 
-  async findOne(
-    id: number
-  ): Promise<CommonResponseDto<{ users: UserReadDto[] }>> {
+  async findOne(id: number): Promise<CommonResponseDto<{ users: UserReadDto[] }>> {
     try {
-      const user = this.classMapper.map(
-        await this.usersRepository.findOneBy({ id }),
-        User,
-        UserReadDto
-      );
+      const userEntity = await this.usersRepository.findOneBy({ id });
+
+      if (!userEntity) {
+        throw new NotFoundException(`User with id ${id} not found`);
+      }
+
+      const user = this.classMapper.map(userEntity, User, UserReadDto);
 
       return {
         success: true,
