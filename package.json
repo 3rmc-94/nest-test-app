@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "serve": "NODE_ENV=development.local nx serve nest-test-app",
-    "sg": "npm i --save mysql2"
+    "serve": "NODE_ENV=development.local nx serve nest-test-app"
   },
   "private": true,
   "dependencies": {
